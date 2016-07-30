@@ -1,0 +1,24 @@
+<div class="well col-sm-12 col-xs-12">
+  <div class="row">
+
+
+
+    <div class="movie-container col-sm-6 col-xs-12" ng-repeat="movie in movieList | paginate:currentPage:pageSize">
+      <a href="#/movie/{{movie.slug}}" class="movie-thumb">
+        <img class="thumbnail img-responsive" ng-src="{{movie.image}}">
+      </a>
+        <h5>{{movie.title}}</h5>
+        <p>Release Date {{movie.date}}</p>
+        <p>Run Time {{movie.run_time}}</p>
+        <buttom>Rated {{movie.rating}}</buttom>
+        <p><button>Add to wishlist</button</p>
+
+    </div>
+
+    <div class="col-xs-12">
+      <pagination class="pagination" total-items="movieList.length" ng-model="currentPage" items-per-page="pageSize"></pagination>
+    </div>
+
+  </div>
+
+</div>
